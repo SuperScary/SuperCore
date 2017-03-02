@@ -1,0 +1,16 @@
+[
+{
+  "modid": "supercore",
+  "name": "SuperCore",
+  "description": "Core mod for SuperScary's mods.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "http://codesynced.com",
+  "updateUrl": "",
+  "authorList": ["SuperScary (ERBF)"],
+  "credits": "SuperScary (ERBF)",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
