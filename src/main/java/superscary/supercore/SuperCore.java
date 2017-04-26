@@ -1,5 +1,6 @@
 package superscary.supercore;
 
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -22,6 +23,12 @@ public class SuperCore
 
     @SidedProxy(clientSide = CLIENT_PROXY, serverSide = COMMON_PROXY)
     public static IProxy proxy;
+
+    static
+    {
+        FluidRegistry.enableUniversalBucket();
+        FluidRegistry.validateFluidRegistry();
+    }
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
