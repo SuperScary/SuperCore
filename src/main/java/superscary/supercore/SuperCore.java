@@ -1,5 +1,6 @@
 package superscary.supercore;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -7,6 +8,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import superscary.supercore.client.cape.ICoreMod;
 import superscary.supercore.info.Generator;
 import superscary.supercore.logging.Logger;
 import superscary.supercore.proxy.IProxy;
@@ -15,7 +17,7 @@ import superscary.supercore.resources.ModResources;
 import static superscary.supercore.resources.ModResources.*;
 
 @Mod(modid = MODID, version = VERSION, name = NAME)
-public class SuperCore
+public class SuperCore implements ICoreMod
 {
 
     public static final String SET_REQUIRED_AFTER = "required-after:supercore@[1.0,)";
@@ -49,6 +51,18 @@ public class SuperCore
     public void postInit(FMLPostInitializationEvent event)
     {
         proxy.postInit();
+    }
+
+    @Override
+    public String modid()
+    {
+        return MODID;
+    }
+
+    @Override
+    public ResourceLocation capeImageLocation()
+    {
+        return new ResourceLocation("");
     }
 
 }

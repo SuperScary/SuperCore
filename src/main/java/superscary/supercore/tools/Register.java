@@ -19,15 +19,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class Register
 {
 
-	public static boolean clientEventHandler(Class cl)
+	public static boolean event(Object object)
 	{
-		MinecraftForge.EVENT_BUS.register(cl);
-		return true;
-	}
-
-	public static boolean serverEventHandler(Class cl)
-	{
-		MinecraftForge.EVENT_BUS.register(cl);
+		MinecraftForge.EVENT_BUS.register(object);
 		return true;
 	}
 

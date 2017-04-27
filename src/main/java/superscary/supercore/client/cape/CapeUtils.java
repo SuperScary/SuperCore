@@ -5,6 +5,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.network.NetworkPlayerInfo;
 import net.minecraft.util.ResourceLocation;
+import superscary.supercore.SuperCore;
 import superscary.supercore.logging.Logger;
 import superscary.supercore.tools.ReflectionUtil;
 
@@ -15,8 +16,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-
-import static superscary.supercore.resources.ModResources.MODID;
 
 /**
  * Copyright (c) 2017 by SuperScary(ERBF) http://codesynced.com
@@ -32,8 +31,8 @@ import static superscary.supercore.resources.ModResources.MODID;
 class CapeUtils
 {
 
-	private static final ResourceLocation CAPE_LOCATION = new ResourceLocation(MODID,
-			"textures/capes/wvsm.png");
+	private static SuperCore superCore = new SuperCore();
+	private static final ResourceLocation CAPE_LOCATION = superCore.capeImageLocation();
 	private static final UUID UUID_SUPERSCARY = UUID.fromString("d25f72fb-28d2-468a-a00c-feaad050368c");
 
 	private static final ExecutorService THREAD_POOL = new ThreadPoolExecutor(0, 2, 1L, TimeUnit.MINUTES,
