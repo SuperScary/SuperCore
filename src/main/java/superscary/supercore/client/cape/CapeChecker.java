@@ -17,6 +17,7 @@ import java.net.URL;
  * the case of brief quotations embodied in critical reviews and
  * certain other noncommercial uses permitted by copyright law.
  */
+@SuppressWarnings("unused")
 public class CapeChecker
 {
 

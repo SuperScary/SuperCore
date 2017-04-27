@@ -77,4 +77,13 @@ public class Modification
 		return false;
 	}
 
+	/*public ResourceLocation getCape()
+	{
+		if (hasCape())
+		{
+			Class<? extends ICoreMod> cl = (Class<? extends ICoreMod>) container.getClass();
+			return c
+		}
+	}*/
+
 }
