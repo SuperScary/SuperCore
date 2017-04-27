@@ -1,5 +1,9 @@
 package superscary.supercore.gas;
 
+import net.minecraft.util.ResourceLocation;
+
+import java.util.HashMap;
+
 /**
  * Copyright (c) 2017 by SuperScary(ERBF) http://codesynced.com
  * <p>
@@ -12,4 +16,12 @@ package superscary.supercore.gas;
  */
 public class GasRegistry
 {
+
+	private static HashMap<GasStack, ResourceLocation> gasStackResourceLocationHashMap = new HashMap<>();
+
+	public static void register(GasStack stack, ResourceLocation location)
+	{
+		gasStackResourceLocationHashMap.put(stack, location);
+	}
+
 }
