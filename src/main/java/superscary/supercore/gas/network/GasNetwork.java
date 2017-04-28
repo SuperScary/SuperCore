@@ -3,6 +3,7 @@ package superscary.supercore.gas.network;
 import superscary.supercore.gas.GasTank;
 import superscary.supercore.gas.GasTransmitter;
 import superscary.supercore.tools.Identifier;
+import superscary.supercore.tools.error.NetworkExistsException;
 
 import java.util.*;
 
@@ -16,6 +17,7 @@ import java.util.*;
  * the case of brief quotations embodied in critical reviews and
  * certain other noncommercial uses permitted by copyright law.
  */
+@SuppressWarnings("unused")
 public class GasNetwork
 {
 
@@ -27,9 +29,27 @@ public class GasNetwork
 	public GasNetwork(Identifier identifier)
 	{
 		this.identifier = identifier;
-		gasNetworkHashMap.put(identifier, this);
+
+		try
+		{
+			if (!gasNetworkHashMap.containsKey(identifier))
+			{
+				gasNetworkHashMap.put(identifier, this);
+			}
+			else
+			{
+				throwException();
+			}
+		} catch (NetworkExistsException e)
+		{
+			e.printStackTrace();
+		}
 	}
 
+	/**
+	 * TODO: Make a method that'll update the network upon placement of a new network item or removal of a network item
+	 * @return
+	 */
 	public boolean update()
 	{
 
@@ -59,6 +79,23 @@ public class GasNetwork
 	public static Set<Identifier> getRegisteredIdentifiers()
 	{
 		return gasNetworkHashMap.keySet();
+	}
+
+	public static boolean removeNetwork(Identifier identifier)
+	{
+		gasNetworkHashMap.remove(identifier);
+		return gasNetworkHashMap.containsKey(identifier);
+	}
+
+	public static boolean removeNetwork(HashMap<Identifier, GasNetwork> network)
+	{
+		gasNetworkHashMap.remove(network.keySet());
+		return gasNetworkHashMap.containsKey(network.keySet());
+	}
+
+	private static final void throwException() throws NetworkExistsException
+	{
+		return;
 	}
 
 }
