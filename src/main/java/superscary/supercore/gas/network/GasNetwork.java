@@ -56,37 +56,67 @@ public class GasNetwork
 		return false;
 	}
 
+	/**
+	 * Gets all possible connections for a {@link GasTransmitter}
+	 * @return
+	 */
 	public List<GasTransmitter> getConnections()
 	{
 		return connections;
 	}
 
+	/**
+	 * Adds a connection (usually a pipe) to an already existing network (this instance)
+	 * @param gasTransmitter
+	 */
 	public void addConnection(GasTransmitter gasTransmitter)
 	{
 		connections.add(gasTransmitter);
 	}
 
+	/**
+	 * Adds a tank to an already existing network (this instance)
+	 * @param tank
+	 */
 	public void addTankToNetwork(GasTank tank)
 	{
 
 	}
 
+	/**
+	 * Gets all registered gas networks
+	 * @return
+	 */
 	public static Collection<GasNetwork> getGasNetworks()
 	{
 		return gasNetworkHashMap.values();
 	}
 
+	/**
+	 * Gets a Set of network identifiers in the network registry
+	 * @return
+	 */
 	public static Set<Identifier> getRegisteredIdentifiers()
 	{
 		return gasNetworkHashMap.keySet();
 	}
 
+	/**
+	 * Removes a network from the registry
+	 * @param identifier
+	 * @return
+	 */
 	public static boolean removeNetwork(Identifier identifier)
 	{
 		gasNetworkHashMap.remove(identifier);
 		return gasNetworkHashMap.containsKey(identifier);
 	}
 
+	/**
+	 * Removes a network from the registry
+	 * @param network
+	 * @return
+	 */
 	public static boolean removeNetwork(HashMap<Identifier, GasNetwork> network)
 	{
 		gasNetworkHashMap.remove(network.keySet());

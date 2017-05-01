@@ -1,8 +1,5 @@
 package superscary.supercore.gas;
 
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fluids.Fluid;
-
 /**
  * Copyright (c) 2017 by SuperScary(ERBF) http://codesynced.com
  * <p>
@@ -13,12 +10,57 @@ import net.minecraftforge.fluids.Fluid;
  * the case of brief quotations embodied in critical reviews and
  * certain other noncommercial uses permitted by copyright law.
  */
-public class GasStack extends Fluid
+@SuppressWarnings("unused")
+public class GasStack
 {
 
-	public GasStack(String fluidName, ResourceLocation location)
+	public static final int DEFAULT_SIZE = 1;
+	public static final int DEFAULT_META = 0;
+
+	private Gas gas;
+	private int size;
+	private int meta;
+
+	public GasStack(Gas gas, int size, int meta)
 	{
-		super(fluidName, location, location);
+		this.gas = gas;
+		this.size = size;
+		this.meta = meta;
+	}
+
+	public GasStack(Gas gas, int size)
+	{
+		this(gas, size, DEFAULT_META);
+	}
+
+	public GasStack(Gas gas)
+	{
+		this(gas, DEFAULT_SIZE);
+	}
+
+	public GasStack getStack()
+	{
+		return this;
+	}
+
+	public Gas getGas()
+	{
+		return gas;
+	}
+
+	public int getSize()
+	{
+		return size;
+	}
+
+	public boolean hasMetadata()
+	{
+		return meta != 0;
+	}
+
+	public int getMetaData()
+	{
+		return meta;
 	}
 
 }
