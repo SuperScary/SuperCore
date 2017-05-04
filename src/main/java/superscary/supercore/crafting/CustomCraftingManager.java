@@ -1,4 +1,4 @@
-package superscary.supercore;
+package superscary.supercore.crafting;
 
 /**
  * Copyright (c) 2017 by SuperScary(ERBF) http://codesynced.com
