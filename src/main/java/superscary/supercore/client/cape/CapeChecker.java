@@ -34,7 +34,7 @@ public class CapeChecker
 		try
 		{
 			URL containerList = new URL(
-					"https://raw.githubusercontent.com/SuperScary/WvsM/master/CAPES.txt");
+					"https://raw.githubusercontent.com/SuperScary/SuperCore/master/CAPES.txt");
 			BufferedReader in = new BufferedReader(new InputStreamReader(containerList.openStream()));
 
 			while (in.ready())
