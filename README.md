@@ -1,5 +1,4 @@
 # SuperCore [![Downloads](http://cf.way2muchnoise.eu/full_supercore_downloads.svg)  ![Available](http://cf.way2muchnoise.eu/versions/supercore.svg)](https://minecraft.curseforge.com/projects/supercore)
-***
 
 SuperCore is a core mod for all of SuperScary's (ERBF) mods. I does not add any items.
 
