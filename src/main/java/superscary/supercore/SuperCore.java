@@ -17,7 +17,7 @@ import static superscary.supercore.resources.ModResources.*;
 public class SuperCore
 {
 
-    public static final String SET_REQUIRED_AFTER = "required-after:supercore@[1.0,)";
+    public static final String SET_REQUIRED_AFTER = "required-after:supercore@[1.3.1,)";
     public static final String SET_REQUIRED_AFTER_CUSTOM = "required-after:supercore@";
 
     @SidedProxy(clientSide = CLIENT_PROXY, serverSide = COMMON_PROXY)
